@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="square" :style="{ left: left + 'px' }">
+      <h1>I am a square</h1>
+    </div>
+    <button @click="moveSquare">Move Square</button>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  setup() {
+    const left = ref(0);
+
+    const moveSquare = () => {
+      left.value += 10;
+    };
+
+    return {
+      left,
+      moveSquare
+    };
   }
-}
+};
 </script>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #632159;
   margin-top: 60px;
+  position: relative;
+}
+.square {
+  height: 10rem;
+  width: 10rem;
+  background-color: green;
+  position: relative;
+}
+.square h1 {
+  color: red;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
 }
 </style>
