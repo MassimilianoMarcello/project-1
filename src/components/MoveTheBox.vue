@@ -4,7 +4,9 @@
       <h1>I am a square</h1>
     </div>
     <button @click="moveSquareToRight">Move Right +100</button>
+    <button @click="reset" >Reset</button>
     <button @click="moveSquareToLeft" >Left -10</button>
+  
 </div>
 </template>
 
@@ -26,11 +28,15 @@ export default {
         left.value -= 10;
       }
     };
+    const reset = () => {
+   left.value=0;
+    };
 
     return {
       left,
       moveSquareToRight,
       moveSquareToLeft,
+      reset,
     };
   }
 };
