@@ -47,11 +47,12 @@ export default {
 .square {
   height: 100px;
   width: 100px;
-  background-color: green;
+  padding: 1rem;
+  background-color: greenyellow;
   position: relative;
 }
 .square h1 {
-  color: red;
+  color: crimson;
 }
 button {
   margin-top: 20px;
